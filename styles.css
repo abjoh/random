@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root { color-scheme: light; --ink: #402b35; --muted: #8d707d; --rose: #d65e79; --rose-dark: #b84062; }
+* { box-sizing: border-box; }
+body { min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 24px; color: var(--ink); font-family: 'DM Sans', sans-serif; background: radial-gradient(ellipse at 20% 15%, #ffe5eb 0, transparent 34%), radial-gradient(ellipse at 85% 85%, #fbe5d7 0, transparent 36%), #fff8f5; }
+body::before, body::after { content: '♥'; position: fixed; color: #eaa6b7; opacity: .18; font-size: 150px; pointer-events: none; }
+body::before { top: 6%; left: 8%; transform: rotate(-18deg); } body::after { bottom: 4%; right: 9%; transform: rotate(16deg); font-size: 110px; }
+.card { width: min(760px, 100%); min-height: 440px; padding: clamp(34px, 8vw, 76px) clamp(22px, 7vw, 70px) 34px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; z-index: 1; background: rgba(255,255,255,.83); border: 1px solid rgba(218,154,171,.3); border-radius: 28px; box-shadow: 0 24px 80px rgba(124,64,82,.12); backdrop-filter: blur(10px); animation: arrive .65s ease both; }
+.sparkle { color: var(--rose); font-size: 30px; margin-bottom: 12px; }
+.eyebrow { margin: 0 0 18px; color: var(--rose-dark); font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; }
+h1 { max-width: 620px; margin: 0; font: 600 clamp(2.25rem, 7vw, 4.6rem)/1.12 'Playfair Display', Georgia, serif; letter-spacing: -.035em; }
+.subtext { max-width: 460px; margin: 20px 0 0; color: var(--muted); font-size: clamp(.98rem, 2.6vw, 1.1rem); line-height: 1.7; }
+.actions { min-height: 58px; margin-top: 34px; display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; }
+button { border: 0; border-radius: 999px; padding: 16px 28px; font: 700 .95rem 'DM Sans', sans-serif; cursor: pointer; transition: transform .18s, box-shadow .18s, background .18s; }
+button:hover { transform: translateY(-2px); } button:focus-visible { outline: 3px solid #eaa6b7; outline-offset: 4px; }
+.primary { color: white; background: var(--rose); box-shadow: 0 10px 24px rgba(214,94,121,.28); } .primary:hover { background: var(--rose-dark); box-shadow: 0 13px 28px rgba(184,64,98,.3); }
+.secondary { color: var(--rose-dark); background: #fff0f3; } .secondary:hover { background: #ffe1e8; }
+.progress { width: min(180px, 60%); display: flex; gap: 7px; margin-top: 28px; }
+.progress span { height: 4px; flex: 1; border-radius: 8px; background: #f3dce2; transition: background .25s; } .progress span.active { background: var(--rose); }
+.step-label { margin: 12px 0 0; color: #aa8793; font-size: .75rem; letter-spacing: .08em; }
+.poems { width: 100%; margin-top: 22px; padding: 6px 0; color: #6d4a58; font: 500 clamp(.98rem, 2.5vw, 1.12rem)/1.85 'Playfair Display', Georgia, serif; }
+.poems p { margin: 0 0 18px; } .poems .signature { margin: 10px 0 0; color: var(--rose-dark); font: 600 .92rem 'DM Sans', sans-serif; } .signature span { color: var(--rose); }
+footer { position: fixed; bottom: 20px; z-index: 1; color: #aa8793; font-size: .78rem; letter-spacing: .08em; } footer span { color: var(--rose); }
+@keyframes arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 520px) { .card { min-height: 420px; border-radius: 22px; } body::before { font-size: 90px; } body::after { font-size: 72px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
